@@ -30,3 +30,4 @@ git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
 git clone https://github.com/kenzok8/small package/small
 git clone https://github.com/monokoo/luci-app-arpbind.git package/luci-app-arpbind
 git clone https://github.com/UnblockNeteaseMusic/server.git package/UnblockNeteaseMusic-server
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
