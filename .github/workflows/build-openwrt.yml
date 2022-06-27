@@ -15,9 +15,25 @@ on:
   workflow_dispatch:
     inputs:
       ssh:
-        description: '输入 true 使用 SSH 连接 Actions'
+        description: 'SSH 连接 Actions'
         required: false
         default: 'false'
+        type: boolean
+      release:
+        description: '上传到release'
+        required: false
+        default: 'false'
+        type: boolean
+      artifact:
+        description: '上传到artifact'
+        required: false
+        default: 'false'
+        type: boolean
+
+#  schedule:
+#    - cron: 0 8 * * 6
+#  watch:
+#    types: started
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
@@ -27,8 +43,6 @@ env:
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
-  UPLOAD_RELEASE: false
   TZ: Asia/Shanghai
 
 jobs:
@@ -120,7 +134,7 @@ jobs:
 
     - name: 组织文件
       id: organize
-      if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
+      if: github.event.inputs.artifact == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
@@ -136,7 +150,7 @@ jobs:
 
     - name: 生成发布标签
       id: tag
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      if: github.event.inputs.release == 'true' && !cancelled()
       run: |
         echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
         touch release.txt
