@@ -1,44 +1,27 @@
-**English** | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
+**说明** | [教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
-# Actions-OpenWrt
+# 云编译脚本基于[P3TERX](https://github.com/P3TERX/Actions-OpenWrt)的 Actions-OpenWrt 脚本.
+本仓库将在北京时间星期六的16:00开始自动编译一次。平时也会根据个人需求手动编译。
 
-[![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)
-![GitHub Stars](https://img.shields.io/github/stars/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Stars&logo=github)
-![GitHub Forks](https://img.shields.io/github/forks/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Forks&logo=github)
+## 设备列表
 
-A template for building OpenWrt with GitHub Actions
+| 机型 | 固件 | 默认网关 |
+| :----: | :----: | :----------: |
+| [红米 AC2100](./.github/workflows/RM2100-lede-openwrt.yml) | ✅ | 192.168.3.1 |
+| [斐讯 K2P](./.github/workflows/K2P-openwrt.yml) | ❎ |  |
+| [斐讯 N1](./.github/workflows/Lean_Docker_LEDE_N1.yml) | ❎ |  |
 
-## Usage
+## SSH 流程操作
 
-- Click the [Use this template](https://github.com/P3TERX/Actions-OpenWrt/generate) button to create a new repository.
-- Generate `.config` files using [Lean's OpenWrt](https://github.com/coolsnowwolf/lede) source code. ( You can change it through environment variables in the workflow file. )
-- Push `.config` file to the GitHub repository.
-- Select `Build OpenWrt` on the Actions page.
-- Click the `Run workflow` button.
-- When the build is complete, click the `Artifacts` button in the upper right corner of the Actions page to download the binaries.
+- 点击 `Run workflow` SSH操作默认`false`，输入 `true` 开启。
+- 工作页面步骤到 SSH 时，点击链接进入SSH界面。
+- 黑屏窗口按 `ctrl+c`，输入 `cd openwrt && make menuconfig` 进入图形配置界面。
+- 主要配置`Target System` `Subtarget` `Target Profile` `LuCI`,完成后选中 `Save` 保存，然后选中 `Exit` 退出。
+- 按 `ctrl+d` 退出会话。
 
-## Tips
-
-- It may take a long time to create a `.config` file and build the OpenWrt firmware. Thus, before create repository to build your own firmware, you may check out if others have already built it which meet your needs by simply [search `Actions-Openwrt` in GitHub](https://github.com/search?q=Actions-openwrt).
-- Add some meta info of your built firmware (such as firmware architecture and installed packages) to your repository introduction, this will save others' time.
-
-## Credits
-
-- [Microsoft Azure](https://azure.microsoft.com)
-- [GitHub Actions](https://github.com/features/actions)
-- [OpenWrt](https://github.com/openwrt/openwrt)
-- [Lean's OpenWrt](https://github.com/coolsnowwolf/lede)
-- [tmate](https://github.com/tmate-io/tmate)
-- [mxschmitt/action-tmate](https://github.com/mxschmitt/action-tmate)
-- [csexton/debugger-action](https://github.com/csexton/debugger-action)
-- [Cowtransfer](https://cowtransfer.com)
-- [WeTransfer](https://wetransfer.com/)
-- [Mikubill/transfer](https://github.com/Mikubill/transfer)
-- [softprops/action-gh-release](https://github.com/softprops/action-gh-release)
-- [ActionsRML/delete-workflow-runs](https://github.com/ActionsRML/delete-workflow-runs)
-- [dev-drprasad/delete-older-releases](https://github.com/dev-drprasad/delete-older-releases)
-- [peter-evans/repository-dispatch](https://github.com/peter-evans/repository-dispatch)
+## 致谢
+[GitHub Actions](https://github.com/features/actions) | [OpenWrt](https://github.com/openwrt/openwrt) | [Lean's OpenWrt](https://github.com/coolsnowwolf/lede) | [tmate](https://github.com/tmate-io/tmate) | [mxschmitt/action-tmate](https://github.com/mxschmitt/action-tmate) | [csexton/debugger-action](https://github.com/csexton/debugger-action) | [Cowtransfer](https://cowtransfer.com) | [WeTransfer](https://wetransfer.com/) | [Mikubill/transfer](https://github.com/Mikubill/transfer) | [softprops/action-gh-release](https://github.com/softprops/action-gh-release) | [ActionsRML/delete-workflow-runs](https://github.com/ActionsRML/delete-workflow-runs) | [dev-drprasad/delete-older-releases](https://github.com/dev-drprasad/delete-older-releases) | [peter-evans/repository-dispatch](https://github.com/peter-evans/repository-dispatch)
 
 ## License
 
-[MIT](https://github.com/P3TERX/Actions-OpenWrt/blob/main/LICENSE) © [**P3TERX**](https://p3terx.com)
+[MIT](https://github.com/VergilGao/openwrt-actions/blob/master/LICENSE) © VergilGao
