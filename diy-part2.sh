@@ -20,7 +20,6 @@ sed -i 's/Xiaomi Mi Router AC2100/Xiaomi AC2100/g' target/linux/ramips/dts/mt762
 #修改登录密码为password
 sed -i '/root/croot:$1$u4rpvVlw$oCaTlWcgSII4PSZQMXL9c.:19150:0:99999:7:::' package/base-files/files/etc/shadow
 # 修改默认主题 argon
-rm -rf feeds/luci/themes/luci-theme-bootstrap/
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci*/Makefile
 
 # 应用
