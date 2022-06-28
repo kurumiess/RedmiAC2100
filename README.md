@@ -1,7 +1,6 @@
 **说明** | [教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
 # 云编译脚本基于[P3TERX](https://github.com/P3TERX/Actions-OpenWrt)的 Actions-OpenWrt 脚本.
-本仓库将在北京时间星期六的16:00开始自动编译一次。平时也会根据个人需求手动编译。
 
 ## 设备列表
 
