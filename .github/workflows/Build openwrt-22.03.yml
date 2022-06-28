@@ -19,15 +19,15 @@ on:
         required: false
         default: 'false'
         type: boolean
-      release:
-        description: '上传到release'
-        required: false
-        default: 'false'
-        type: boolean
       artifact:
         description: '上传到artifact'
         required: false
-        default: 'false'
+        default: 'true'
+        type: boolean
+      release:
+        description: '上传到release'
+        required: false
+        default: 'true'
         type: boolean
 
 #  schedule:
@@ -141,7 +141,7 @@ jobs:
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
 
-    - name: 上载固件目录
+    - name: 上载固件到artifact
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
