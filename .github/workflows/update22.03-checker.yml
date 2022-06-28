@@ -9,7 +9,7 @@
 # Description: Source code update checker
 #
 
-name: Update Checker
+name: Update Checker 22.03
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
