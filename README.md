@@ -1,6 +1,7 @@
 **说明** | [教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
 # 云编译脚本基于[P3TERX](https://github.com/P3TERX/Actions-OpenWrt)的 Actions-OpenWrt 脚本.
+官方源码OpenWrt 21.02
 
 ## 设备列表
 
