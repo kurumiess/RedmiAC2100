@@ -23,10 +23,15 @@ sed -i '/root/croot:$1$u4rpvVlw$oCaTlWcgSII4PSZQMXL9c.:19150:0:99999:7:::' packa
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci*/Makefile
 
 # 应用
-git clone https://github.com/mchome/openwrt-vlmcsd.git package/vlmcsd
-git clone https://github.com/mchome/luci-app-vlmcsd.git package/luci-app-vlmcsd
-git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
-git clone https://github.com/kenzok8/small package/small
-git clone https://github.com/monokoo/luci-app-arpbind.git package/luci-app-arpbind
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+#git clone https://github.com/monokoo/luci-app-arpbind.git package/luci-app-arpbind
+#git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+#git clone https://github.com/mchome/openwrt-vlmcsd.git package/vlmcsd
+#git clone https://github.com/mchome/luci-app-vlmcsd.git package/luci-app-vlmcsd
+#git clone https://github.com/kenzok8/small package/small
+#git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
+
+git clone https://github.com/kenzok8/small-package package/small-package
 git clone https://github.com/KURUMIESS/ALLpackages.git package/ALLpackages
+
+
+
