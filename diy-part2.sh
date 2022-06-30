@@ -29,9 +29,10 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci*/M
 #git clone https://github.com/mchome/luci-app-vlmcsd.git package/luci-app-vlmcsd
 #git clone https://github.com/kenzok8/small package/small
 #git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
+#git clone https://github.com/KURUMIESS/ALLpackages.git package/ALLpackages
 
 git clone https://github.com/kenzok8/small-package package/small-package
-git clone https://github.com/KURUMIESS/ALLpackages.git package/ALLpackages
+
 
 
 
