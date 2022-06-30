@@ -15,8 +15,9 @@
 
 # Add a feed source
 # sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
-sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
-sed -i '$a src-git node https://github.com/nxhack/openwrt-node-packages' feeds.conf.default
+# sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
 # sed -i '$a src-git KURUMI https://github.com/KURUMIESS/packages' feeds.conf.default
 
-sed -i '$a src-git ALLpackages https://github.com/KURUMIESS/ALLpackages.git' feeds.conf.default
+sed -i '$a src-git node https://github.com/nxhack/openwrt-node-packages' feeds.conf.default
+sed -i '$a src-git ALLpackages https://github.com/KURUMIESS/ALLpackages' feeds.conf.default
+sed -i '$a src-git small https://github.com/kenzok8/small-package' feeds.conf.default
