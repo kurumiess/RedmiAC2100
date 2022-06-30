@@ -19,5 +19,4 @@
 # sed -i '$a src-git KURUMI https://github.com/KURUMIESS/packages' feeds.conf.default
 
 sed -i '$a src-git node https://github.com/nxhack/openwrt-node-packages' feeds.conf.default
-sed -i '$a src-git ALLpackages https://github.com/KURUMIESS/ALLpackages' feeds.conf.default
 sed -i '$a src-git small https://github.com/kenzok8/small-package' feeds.conf.default
